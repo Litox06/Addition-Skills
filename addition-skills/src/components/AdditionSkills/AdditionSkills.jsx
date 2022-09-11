@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import bearImage from "./assets/bearReading.png"
+import bearImage from "./assets/bearReading.png";
 
 export default function AdditionSkills() {
   const [number1, setNumber1] = useState("");
@@ -69,16 +69,10 @@ export default function AdditionSkills() {
   return (
     <Container className="main-container">
       <Row>
-        <Col style={{marginTop: "12.5%"}}>
+        <Col style={{ marginTop: "12.5%" }}>
           <div className="title-container">
             <h2>🧮 Let's test your addition skills! 🧮</h2>
           </div>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-        <img className="bear-image" src={bearImage} style={{width: "20%", height: "auto"}}/>
         </Col>
       </Row>
 
@@ -128,6 +122,16 @@ export default function AdditionSkills() {
               Submit answer
             </Button>
           </div>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <img
+            className="bear-image"
+            src={bearImage}
+            style={{ width: "20%", height: "60.5%" }}
+          />
         </Col>
       </Row>
     </Container>
