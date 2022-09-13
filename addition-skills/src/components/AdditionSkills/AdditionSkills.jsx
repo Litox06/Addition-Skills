@@ -15,23 +15,25 @@ export default function AdditionSkills() {
   // Input tracking on state
   const [number, setNumber] = useState("");
 
-  // // Score tracking on state
-  // const [score, setScore] = useState(0);
-
+  // Function to generate a random number for the expression
   const randomNumber = () => {
     return Math.trunc(Math.random() * 999) + 1;
   };
 
+
+  // Executes the randomNumber function to set new numbers after it's been summited and also clear the input box
   const randomizeAfterSubmit = () => {
     setNumber1(randomNumber());
     setNumber2(randomNumber());
     setNumber("");
   };
 
+  // Handles input's changes
   const onChangeHandler = (event) => {
     setNumber(event.target.value);
   };
 
+  // Gets the constructed URL, compares the input to the response from the API & alerts the right/wrong message
   const fetchExpression = (url) => {
     fetch(url)
       .then((response) => response.json())
@@ -50,6 +52,7 @@ export default function AdditionSkills() {
       .catch((error) => console.log(error));
   };
 
+  // Constructing URL, check if number is integer, if it is does the API call and if its not alerts the user
   const handleClickSubmit = () => {
     if (number % 1 === 0) {
       const initialURL = `http://api.mathjs.org/v4/?expr=${number1}%2B${number2}`;
@@ -75,14 +78,6 @@ export default function AdditionSkills() {
           </div>
         </Col>
       </Row>
-
-      {/* <Row>
-        <Col>
-          <div className="score">
-            <h2>Score: {score}</h2>
-          </div>
-        </Col>
-      </Row> */}
 
       <Row>
         <Col>
@@ -131,6 +126,7 @@ export default function AdditionSkills() {
             className="bear-image"
             src={bearImage}
             style={{ width: "20%", height: "60.5%" }}
+            alt= ""
           />
         </Col>
       </Row>
